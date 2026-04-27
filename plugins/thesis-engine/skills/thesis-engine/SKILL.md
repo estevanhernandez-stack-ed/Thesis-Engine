@@ -12,7 +12,7 @@ description: >
   trigger on "run the engine", "find me a topic", "what should I write about next",
   or "give me sources for X". This skill produces inputs for the vibe-thesis Thesis
   Template — it does not replace the drafting work that happens inside vibe-thesis.
-version: 0.2.0
+version: 0.2.1
 ---
 
 # Thesis Engine — Research Feeder for vibe-thesis
@@ -39,7 +39,8 @@ The engine's job is to do the cold-start work that's painful inside vibe-thesis:
 
 Default domain is `ai_ml`. Honor explicit `--domain` arguments. Supported domains:
 
-- `ai_ml` — AI / Machine Learning *(default)*
+- `ai_ml` — AI / Machine Learning *(default)*. Capability research — model architectures, training, evals.
+- `agentic_systems` — Multi-agent coordination, long-term memory, human-AI handoff design. Systems and HCI research, not capability research. Has axis-specific seed queries (see "Per-domain seed query overrides" below). 626 Labs alignment: every plugin coexists with the others, every plugin makes ask-vs-act calls dozens of times per session.
 - `theater_ops` — Theater Technology & Operations
 - `film_exhibition` — Film Distribution & Exhibition
 - `spatial_xr` — Spatial Computing / XR
@@ -64,6 +65,41 @@ For each result cluster, extract:
 - **Novelty score** (1–5): Is this still emerging vs already mainstream?
 - **Thesis potential** (1–5): Is there an arguable, researchable angle?
 - **Relevance** (1–5): Connects to the user's domain mix?
+
+### Step 1.2a — Per-Domain Seed Query Overrides
+
+Some domains return weak topic candidates against the generic 4-angle template because their primary research surfaces aren't indexed by "research breakthroughs" or "preprint arxiv notable" searches. For these, use the override seeds below *in place of* the generic angles. Seeds are unsorted — run all of them, dedupe results, then score.
+
+#### `agentic_systems`
+
+The `ai_ml` template biases toward capability research (model architectures, training, evals). `agentic_systems` covers the systems and HCI research surfaces that 626 Labs actually depends on but that capability searches miss. Three axes with seed queries each:
+
+```text
+# Axis 1: Compositional agent coordination
+"multi-agent coordination protocols 2025 production"
+"blackboard architecture LLM agents"
+"contract net protocol agentic systems"
+"agent collision avoidance shared state"
+"orchestrator-worker patterns multi-agent 2025"
+
+# Axis 2: Long-term memory + ambient project awareness
+"agentic memory architectures 2025"
+"context compaction long-running agents"
+"retrieval-augmented persistent agent state"
+"ambient project awareness developer tooling agents"
+"episodic vs semantic memory LLM agents"
+
+# Axis 3: Human-AI handoff design (HCI of agentic systems)
+"when agent should ask vs act LLM 2025"
+"uncertainty-driven handoff agentic systems"
+"interruption cost LLM agents productivity CHI CSCW"
+"mixed-initiative interaction LLM agents"
+"AI agent transparency disclosure HCI"
+```
+
+When scoring `agentic_systems` topics, weight Relevance against 626 Labs use cases: multi-plugin coexistence (Axis 1), persistent project context across the dashboard / vibe-cartographer / Architect AI (Axis 2), and the ask-vs-act decision every plugin makes (Axis 3). A topic that hits two axes scores higher than one that hits one strongly.
+
+Venues to favor when scoring sources for this domain: CHI, CSCW, AAMAS, MIT Media Lab notes, Anthropic / Google DeepMind / Microsoft Research multi-agent papers, MIT Sloan / HBR on AI-augmented work. Venues to discount: pure capability benchmarks, standalone model papers without interaction studies.
 
 ### Step 1.3 — Present Top 5
 
