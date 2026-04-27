@@ -1,0 +1,32 @@
+{
+  "name": "Thesis-Engine",
+  "owner": {
+    "name": "626Labs LLC"
+  },
+  "description": "Solo-repo marketplace for the Thesis Engine plugin — a research feeder for vibe-thesis projects. For the aggregated 626Labs marketplace (vibe-cartographer, vibe-doc, vibe-test, vibe-sec, thesis-engine) install estevanhernandez-stack-ed/vibe-plugins instead.",
+  "plugins": [
+    {
+      "name": "thesis-engine",
+      "source": "./plugins/thesis-engine",
+      "description": "Research feeder for vibe-thesis projects. Discovers cutting-edge thesis topics, gathers primary sources / opposing positions / methodological precedents across five research axes, and emits research notes + a Pandoc-ready BibTeX bibliography in vibe-thesis-shaped subdirectories ready to drop into ThesisStudio. Optional Smart Brevity blog adapter for BlogStudio.",
+      "author": {
+        "name": "Estevan Hernandez"
+      },
+      "homepage": "https://github.com/estevanhernandez-stack-ed/Thesis-Engine",
+      "keywords": [
+        "thesis",
+        "vibe-thesis",
+        "research",
+        "source-gathering",
+        "bibtex",
+        "pandoc",
+        "smart-brevity",
+        "blog",
+        "ai-ml",
+        "626labs"
+      ],
+      "category": "writing",
+      "license": "MIT"
+    }
+  ]
+}
