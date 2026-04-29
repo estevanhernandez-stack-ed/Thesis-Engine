@@ -1,3 +1,7 @@
+<p align="center">
+  <img alt="Thesis Engine — research feeder for vibe-thesis projects" src="https://626labs.dev/assets/brand/plugins/thesis-engine-banner-1500x500.png" />
+</p>
+
 # Thesis-Engine
 
 Source repo for the **Thesis Engine** Claude Code plugin — a research feeder for [vibe-thesis](https://github.com/estevanhernandez-stack-ed/vibe-cartographer) projects.
