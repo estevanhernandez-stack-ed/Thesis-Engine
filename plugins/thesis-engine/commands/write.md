@@ -18,6 +18,6 @@ Steps:
 Output destination: `thesis-engine-run-YYYYMMDD/` in the current working directory.
 
 End by listing the output paths in chat with `computer://` links and the one-line ingest hint:
-> Drop `01_PLANNING/`, `02_RESEARCH/`, and `05_CITATIONS/` into `C:\Users\estev\Projects\ThesisStudio\`. Merge `references.bib` into the canonical bibliography.
+> Drop `01_PLANNING/`, `02_RESEARCH/`, and `05_CITATIONS/` into your ThesisStudio root. Merge `references.bib` into the canonical bibliography.
 
 Offer `/thesis-engine:blog <run-folder>` next if a blog draft is wanted.

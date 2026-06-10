@@ -12,7 +12,7 @@ description: >
   trigger on "run the engine", "find me a topic", "what should I write about next",
   or "give me sources for X". This skill produces inputs for the vibe-thesis Thesis
   Template — it does not replace the drafting work that happens inside vibe-thesis.
-version: 0.2.1
+version: 0.2.3
 ---
 
 # Thesis Engine — Research Feeder for vibe-thesis
@@ -137,7 +137,7 @@ thesis-engine-run-YYYYMMDD/
     └── references.bib              (BibTeX, Pandoc-ready)
 ```
 
-The subdirectory names mirror the vibe-thesis Template exactly — drop them into `C:\Users\estev\Projects\ThesisStudio\` and they merge cleanly. `references.bib` should be appended to the canonical `05_CITATIONS/references.bib` (or replace it on a fresh project).
+The subdirectory names mirror the vibe-thesis Template exactly — drop them into your ThesisStudio root and they merge cleanly. `references.bib` should be appended to the canonical `05_CITATIONS/references.bib` (or replace it on a fresh project).
 
 ### Step 2.1 — Source Search
 
@@ -271,7 +271,7 @@ thesis-engine-run-YYYYMMDD/
             └── frontmatter.yaml
 ```
 
-Subdirectory names mirror BlogStudio's live layout — drop `02_DRAFTS/<dated-slug>/` into `C:\Users\estev\Projects\BlogStudio\02_DRAFTS\` for ingest.
+Subdirectory names mirror BlogStudio's live layout — drop `02_DRAFTS/<dated-slug>/` into your BlogStudio `02_DRAFTS\` folder for ingest.
 
 ### Step 3.1 — Distillation Rules
 
@@ -313,7 +313,7 @@ When the user invokes `/thesis-engine:run`, execute Stages 1 + 2 in sequence. St
 
 After a successful run:
 1. Write `<run>/README.md` summarizing what was produced and how to ingest it into ThesisStudio.
-2. Log a completion task to the 626Labs **Thesis Engine** project (project ID `6H02m934H97jNl15DzWe`) using `mcp__626labs__manage_tasks` action `create` with title `"Thesis run YYYY-MM-DD — [topic]"` and status `Done`. If the 626Labs MCP is unavailable, log a one-line note to chat and continue.
+2. If a task backend is configured (e.g. an MCP task tool), log a completion task with title `"Thesis run YYYY-MM-DD — [topic]"` and status `Done`. If no backend is available, log a one-line note to chat and continue.
 3. List the output paths in chat with `computer://` links.
 
 ---
@@ -332,9 +332,9 @@ After a successful run:
 
 ## Integration Notes
 
-- **vibe-thesis (ThesisStudio)** — `01_PLANNING/`, `02_RESEARCH/`, `05_CITATIONS/` from a run folder drop directly into `C:\Users\estev\Projects\ThesisStudio\`. Subdirectory names match exactly. Merge `references.bib` into the canonical bibliography.
-- **BlogStudio** — `blog/02_DRAFTS/<dated-slug>/` drops into `C:\Users\estev\Projects\BlogStudio\02_DRAFTS\`.
-- **626Labs MCP** — Each run logs a completion task to project `6H02m934H97jNl15DzWe`.
+- **vibe-thesis (ThesisStudio)** — `01_PLANNING/`, `02_RESEARCH/`, `05_CITATIONS/` from a run folder drop directly into your ThesisStudio root. Subdirectory names match exactly. Merge `references.bib` into the canonical bibliography.
+- **BlogStudio** — `blog/02_DRAFTS/<dated-slug>/` drops into your BlogStudio `02_DRAFTS\` folder.
+- **Task backend (optional)** — Each run logs a completion task when an MCP task tool is configured.
 - **Citation style** — Pandoc `[@authorYear]` keys throughout, BibTeX bibliography. Matches vibe-thesis's render pipeline.
 
 ---

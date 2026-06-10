@@ -17,4 +17,4 @@ Steps:
 Output destination: `<run>/blog/02_DRAFTS/YYYY-MM-DD-[slug]/` if running against a run folder; otherwise the same directory as the source thesis.
 
 End by listing the output paths with `computer://` links and the ingest hint:
-> Drop `blog/02_DRAFTS/<dated-slug>/` into `C:\Users\estev\Projects\BlogStudio\02_DRAFTS\`.
+> Drop `blog/02_DRAFTS/<dated-slug>/` into your BlogStudio `02_DRAFTS\` folder.

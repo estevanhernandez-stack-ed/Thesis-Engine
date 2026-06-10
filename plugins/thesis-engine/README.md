@@ -99,9 +99,9 @@ thesis-engine-run-YYYYMMDD/
 
 The output subdirectory names match the vibe-thesis Template exactly. To ingest:
 
-1. Copy `01_PLANNING/`, `02_RESEARCH/`, and `05_CITATIONS/` from the run folder into `C:\Users\estev\Projects\ThesisStudio\` (merge over existing structure).
+1. Copy `01_PLANNING/`, `02_RESEARCH/`, and `05_CITATIONS/` from the run folder into your ThesisStudio root (merge over existing structure).
 2. Append `references.bib` entries to your canonical `05_CITATIONS/references.bib`. Strip the `note = {Engine-gathered. Verify before citing.}` line from entries you've verified.
-3. If you ran with `--blog`, copy `blog/02_DRAFTS/<dated-slug>/` into `C:\Users\estev\Projects\BlogStudio\02_DRAFTS\`.
+3. If you ran with `--blog`, copy `blog/02_DRAFTS/<dated-slug>/` into your BlogStudio `02_DRAFTS\` folder.
 
 Then continue inside vibe-thesis with the LeadWriter persona, the research swarms, and the render pipeline.
 
@@ -120,7 +120,7 @@ If any gate fails, the partial run is moved to `pending/` and the failed gates s
 
 ## 626Labs integration
 
-Each successful run logs a completion task to the **Thesis Engine** project (`6H02m934H97jNl15DzWe`). If the 626Labs MCP is unavailable, the run still completes — you just don't get the activity-log entry.
+Each successful run can log a completion task to your task backend (e.g. an MCP task tool) when one is configured. If none is available, the run still completes — you just don't get the activity-log entry.
 
 ## Customizing
 
